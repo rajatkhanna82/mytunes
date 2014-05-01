@@ -8,13 +8,9 @@ var PlayerView = Backbone.View.extend({
   className: "audio",
 
   initialize: function() {
-    this.$el.on('ended', this.handlePlaybackEnded);
-
-  },
-
-  handlePlaybackEnded: function(){
-    alert('ended11')
-    this.model.dequeue();
+    this.$el.on('ended', function(){
+      this.model.end();
+      }.bind(this))
   },
 
   setSong: function(song){
