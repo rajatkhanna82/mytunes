@@ -25,7 +25,7 @@ describe('PlayerView', function() {
     appView = new AppView({model: new AppModel({library: library})});
   });
 
-  xit('gets its model property set to any song that is played', function(){
+  it('gets its model property set to any song that is played', function(){
     expect(appView.playerView.model).to.not.equal(library.at(0));
     library.at(0).play();
     expect(appView.playerView.model).to.equal(library.at(0));
